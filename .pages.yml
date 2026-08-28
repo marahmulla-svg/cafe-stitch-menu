@@ -1,8 +1,8 @@
 media:
-  input: .
-  output: /
+  input: media
+  output: /media
   extensions: [jpg, jpeg, png, webp]
-
+  rename: safe
 content:
   - name: menu
     label: Cafe Stitch Menu
