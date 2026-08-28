@@ -1,751 +1,204 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fbfaf7">
-<title>Cafe Stitch Menu</title>
-<style>
-:root {
-  --blue:#5b80a8; --blue2:#cfe2ef; --lav:#a58ab9; --pink:#efcad8;
-  --cream:#fbfaf7; --ink:#24384f; --muted:#7a8795; --line:#dde2e6;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);font-family:Arial,"Noto Sans Arabic",sans-serif;color:var(--ink)}
-.shell{max-width:620px;margin:auto;min-height:100vh;background:var(--cream)}
-.hero{padding:48px 22px 30px;text-align:center;background:
-radial-gradient(circle at 10% 10%,rgba(207,226,239,.9) 0 18%,transparent 18.5%),
-radial-gradient(circle at 92% 12%,rgba(239,202,216,.85) 0 20%,transparent 20.5%), var(--cream)}
-.mark{width:78px;height:78px;border:2px solid var(--blue);border-radius:28px;margin:auto;display:grid;place-items:center;font-weight:800;font-size:26px;color:var(--blue)}
-.brand{font-size:31px;font-weight:800;margin-top:13px}
-.tag{font-size:11px;letter-spacing:4px;color:var(--lav);margin-top:5px}
-.menu-title{padding:26px 20px 8px;text-align:center}
-.menu-title h1{font-size:36px;line-height:1;margin:0}
-.menu-title .ar{font-size:23px;color:var(--lav);margin-top:6px}
-.tabs{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;background:rgba(251,250,247,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 18px 0}
-.tab{border:0;background:none;padding:16px 6px 13px;font-weight:800;font-size:15px;color:#7b8793;border-bottom:3px solid transparent;cursor:pointer}
-.tab.active{color:var(--blue);border-color:var(--blue)}
-.panel{display:none;padding:12px 20px 56px}
-.panel.active{display:block}
-.category{border-bottom:1px solid var(--line)}
-.category summary{list-style:none;padding:22px 2px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
-.category summary::-webkit-details-marker{display:none}
-.cat-title{display:flex;flex-direction:column;gap:4px}
-.cat-title span{font-size:22px;font-weight:800}
-.cat-title small{font-size:14px;font-weight:500;color:var(--muted)}
-.chev{width:12px;height:12px;border-right:1.8px solid var(--ink);border-bottom:1.8px solid var(--ink);transform:rotate(45deg);transition:.2s;margin-right:6px}
-details[open] .chev{transform:rotate(225deg)}
-.products{padding:0 0 10px}
-.product{display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:14px;padding:15px 0;border-top:1px solid #e8ebed}
-.product-img{width:86px;height:86px;object-fit:cover;border-radius:16px;background:#eee6eb}
-.product-copy{min-width:0}
-.product-name{font-size:16px;font-weight:800;line-height:1.25}
-.product-ar{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.35}
-.price{font-size:20px;font-weight:800;color:var(--blue);white-space:nowrap}
-.price span{font-size:13px;margin-left:2px}
-.note{padding:16px;border-radius:18px;background:#eef4f8;color:#63778e;font-size:12px;line-height:1.5;margin-top:18px}
-.footer{text-align:center;padding:44px 20px 56px;background:linear-gradient(135deg,#e9dff0,#d9e9f3)}
-.footer b{font-size:21px;color:var(--blue)}
-.footer p{font-size:10px;letter-spacing:3px;color:#6e8297}
-@media(max-width:380px){
-  .product{grid-template-columns:72px 1fr auto}
-  .product-img{width:72px;height:72px}
-  .product-name{font-size:15px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fbfaf7">
+  <title>Cafe Stitch Menu</title>
+  <style>
+    :root{
+      --blue:#5b80a8; --blue2:#cfe2ef; --lav:#a58ab9; --pink:#efcad8;
+      --cream:#fbfaf7; --ink:#24384f; --muted:#7a8795; --line:#dde2e6;
+      --shadow:0 10px 30px rgba(36,56,79,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,"Noto Sans Arabic",sans-serif}
+    button{font:inherit}
+    .shell{max-width:680px;margin:0 auto;min-height:100vh;background:
+      radial-gradient(circle at 10% 8%,rgba(207,226,239,.78) 0 14%,transparent 15%),
+      radial-gradient(circle at 91% 12%,rgba(239,202,216,.65) 0 16%,transparent 17%),
+      var(--cream)}
+    .hero{padding:42px 20px 24px;text-align:center}
+    .mark{width:78px;height:78px;border:2px solid var(--blue);border-radius:28px;margin:auto;display:grid;place-items:center;font-weight:800;font-size:23px;color:var(--blue);background:rgba(255,255,255,.55)}
+    .brand{font-size:31px;font-weight:800;margin-top:13px}
+    .tag{font-size:12px;letter-spacing:3px;color:var(--lav);margin-top:5px}
+    .tabs-wrap{position:sticky;top:0;z-index:20;padding:8px 14px 10px;background:rgba(251,250,247,.88);backdrop-filter:blur(12px)}
+    .tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:5px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.82)}
+    .tab{border:0;border-radius:13px;padding:12px 8px;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
+    .tab.active{background:var(--blue);color:#fff}
+    .content{padding:12px 14px 44px}
+    .section{display:none}.section.active{display:block}
+    .category{margin:12px 0;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.82);overflow:hidden;box-shadow:var(--shadow)}
+    .category-head{width:100%;border:0;background:transparent;color:var(--ink);padding:17px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;text-align:left}
+    .category-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;font-weight:800;font-size:17px}
+    .category-title .ar{direction:rtl;font-weight:700;color:var(--lav);font-size:15px}
+    .chev{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--blue2);transition:transform .2s ease}
+    .category.open .chev{transform:rotate(180deg)}
+    .products{display:none;border-top:1px solid var(--line)}
+    .category.open .products{display:block}
+    .product{display:grid;grid-template-columns:74px 1fr auto;gap:13px;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line)}
+    .product:last-child{border-bottom:0}
+    .product-img{width:74px;height:74px;border-radius:16px;object-fit:cover;background:linear-gradient(135deg,var(--pink),var(--blue2));display:block}
+    .names{min-width:0}
+    .name-en{font-weight:800;font-size:15px;line-height:1.25}
+    .name-ar{margin-top:5px;direction:rtl;text-align:left;color:var(--muted);font-size:14px;line-height:1.25}
+    .price{font-size:16px;font-weight:800;white-space:nowrap;color:var(--blue)}
+    .status{padding:30px 18px;text-align:center;color:var(--muted)}
+    .footer{padding:8px 20px 34px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.4px}
+    @media (max-width:420px){
+      .hero{padding-top:34px}.brand{font-size:28px}
+      .product{grid-template-columns:66px 1fr auto;padding:12px}
+      .product-img{width:66px;height:66px}.name-en{font-size:14px}.name-ar{font-size:13px}
+    }
+  </style>
 </head>
 <body>
-<main class="shell">
-  <header class="hero">
-    <div class="mark">CS</div>
-    <div class="brand">Cafe Stitch</div>
-    <div class="tag">SIP · BITE · REPEAT</div>
-  </header>
+  <main class="shell">
+    <header class="hero">
+      <div class="mark">CS</div>
+      <div class="brand">Cafe Stitch</div>
+      <div class="tag">MENU</div>
+    </header>
 
-  <section class="menu-title">
-    <h1>MENU</h1>
-    <div class="ar" dir="rtl">المنيو</div>
-  </section>
+    <div class="tabs-wrap">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="drinks" aria-selected="true">DRINKS | مشروبات</button>
+        <button class="tab" data-tab="sweets" aria-selected="false">SWEETS | حلويات</button>
+      </div>
+    </div>
 
-  <nav class="tabs">
-    <button class="tab active" data-target="drinks">DRINKS · مشروبات</button>
-    <button class="tab" data-target="sweets">SWEETS · حلويات</button>
-  </nav>
+    <section class="content">
+      <div id="drinks" class="section active"></div>
+      <div id="sweets" class="section"></div>
+      <div id="status" class="status">Loading menu…</div>
+    </section>
 
-  <section id="drinks" class="panel active">
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Coffee</span>
-          <small dir="rtl">قهوة</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Espresso">
-          <div class="product-copy">
-            <div class="product-name">Espresso</div>
-            <div class="product-ar" dir="rtl">إسبريسو</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Double Espresso">
-          <div class="product-copy">
-            <div class="product-name">Double Espresso</div>
-            <div class="product-ar" dir="rtl">إسبريسو دبل</div>
-          </div>
-          <div class="price">10<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Nescafé">
-          <div class="product-copy">
-            <div class="product-name">Nescafé</div>
-            <div class="product-ar" dir="rtl">نسكافيه</div>
-          </div>
-          <div class="price">12<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Cappuccino">
-          <div class="product-copy">
-            <div class="product-name">Cappuccino</div>
-            <div class="product-ar" dir="rtl">كابتشينو</div>
-          </div>
-          <div class="price">12<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Hot Chocolate">
-          <div class="product-copy">
-            <div class="product-name">Hot Chocolate</div>
-            <div class="product-ar" dir="rtl">شوكولاتة ساخنة</div>
-          </div>
-          <div class="price">12<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Green Tea">
-          <div class="product-copy">
-            <div class="product-name">Green Tea</div>
-            <div class="product-ar" dir="rtl">شاي أخضر</div>
-          </div>
-          <div class="price">10<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="House Drink">
-          <div class="product-copy">
-            <div class="product-name">House Drink</div>
-            <div class="product-ar" dir="rtl">مشروب الدار</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Iced Coffee</span>
-          <small dir="rtl">قهوة باردة</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Iced Coffee">
-          <div class="product-copy">
-            <div class="product-name">Iced Coffee</div>
-            <div class="product-ar" dir="rtl">آيس كوفي</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Iced Vanilla">
-          <div class="product-copy">
-            <div class="product-name">Iced Vanilla</div>
-            <div class="product-ar" dir="rtl">آيس فانيلا</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Iced Latte">
-          <div class="product-copy">
-            <div class="product-name">Iced Latte</div>
-            <div class="product-ar" dir="rtl">آيس لاتيه</div>
-          </div>
-          <div class="price">15<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Milkshakes</span>
-          <small dir="rtl">ميلك شيك</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Oreo">
-          <div class="product-copy">
-            <div class="product-name">Oreo</div>
-            <div class="product-ar" dir="rtl">أوريو</div>
-          </div>
-          <div class="price">30<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Pistachio">
-          <div class="product-copy">
-            <div class="product-name">Pistachio</div>
-            <div class="product-ar" dir="rtl">فستق</div>
-          </div>
-          <div class="price">30<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Chocolate">
-          <div class="product-copy">
-            <div class="product-name">Chocolate</div>
-            <div class="product-ar" dir="rtl">شوكولاتة</div>
-          </div>
-          <div class="price">30<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Vanilla">
-          <div class="product-copy">
-            <div class="product-name">Vanilla</div>
-            <div class="product-ar" dir="rtl">فانيلا</div>
-          </div>
-          <div class="price">30<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Strawberry">
-          <div class="product-copy">
-            <div class="product-name">Strawberry</div>
-            <div class="product-ar" dir="rtl">فراولة</div>
-          </div>
-          <div class="price">30<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Mojito</span>
-          <small dir="rtl">موهيتو</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Lemon Mint">
-          <div class="product-copy">
-            <div class="product-name">Lemon Mint</div>
-            <div class="product-ar" dir="rtl">ليمون ونعنع</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Strawberry">
-          <div class="product-copy">
-            <div class="product-name">Strawberry</div>
-            <div class="product-ar" dir="rtl">فراولة</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Mango">
-          <div class="product-copy">
-            <div class="product-name">Mango</div>
-            <div class="product-ar" dir="rtl">مانجا</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Watermelon">
-          <div class="product-copy">
-            <div class="product-name">Watermelon</div>
-            <div class="product-ar" dir="rtl">بطيخ</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Blueberry">
-          <div class="product-copy">
-            <div class="product-name">Blueberry</div>
-            <div class="product-ar" dir="rtl">بلو بيري</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Mix Berry">
-          <div class="product-copy">
-            <div class="product-name">Mix Berry</div>
-            <div class="product-ar" dir="rtl">ميكس بيري</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Blue Carso">
-          <div class="product-copy">
-            <div class="product-name">Blue Carso</div>
-            <div class="product-ar" dir="rtl">بلو كارسو</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Bubblegum">
-          <div class="product-copy">
-            <div class="product-name">Bubblegum</div>
-            <div class="product-ar" dir="rtl">بابل غام</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Cold Drinks</span>
-          <small dir="rtl">مشروبات باردة</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Coca-Cola">
-          <div class="product-copy">
-            <div class="product-name">Coca-Cola</div>
-            <div class="product-ar" dir="rtl">كوكا كولا</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Coca-Cola Zero">
-          <div class="product-copy">
-            <div class="product-name">Coca-Cola Zero</div>
-            <div class="product-ar" dir="rtl">كوكا كولا زيرو</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Sprite">
-          <div class="product-copy">
-            <div class="product-name">Sprite</div>
-            <div class="product-ar" dir="rtl">سبرايت</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Fanta">
-          <div class="product-copy">
-            <div class="product-name">Fanta</div>
-            <div class="product-ar" dir="rtl">فانتا</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Soda">
-          <div class="product-copy">
-            <div class="product-name">Soda</div>
-            <div class="product-ar" dir="rtl">صودا</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Water">
-          <div class="product-copy">
-            <div class="product-name">Water</div>
-            <div class="product-ar" dir="rtl">مي</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="XL">
-          <div class="product-copy">
-            <div class="product-name">XL</div>
-            <div class="product-ar" dir="rtl">XL</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="XL Ten">
-          <div class="product-copy">
-            <div class="product-name">XL Ten</div>
-            <div class="product-ar" dir="rtl">XL Ten</div>
-          </div>
-          <div class="price">7<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Fresh Orange Juice">
-          <div class="product-copy">
-            <div class="product-name">Fresh Orange Juice</div>
-            <div class="product-ar" dir="rtl">عصير برتقال طبيعي</div>
-          </div>
-          <div class="price">22<span>₪</span></div>
-        </div></div>
-    </details></section>
-  <section id="sweets" class="panel">
-    
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Desserts</span>
-          <small dir="rtl">حلويات</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Cheesecake">
-          <div class="product-copy">
-            <div class="product-name">Cheesecake</div>
-            <div class="product-ar" dir="rtl">تشيز كيك</div>
-          </div>
-          <div class="price">40<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Chocolate Cake">
-          <div class="product-copy">
-            <div class="product-name">Chocolate Cake</div>
-            <div class="product-ar" dir="rtl">كيك شوكولاتة</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Oreo Cake">
-          <div class="product-copy">
-            <div class="product-name">Oreo Cake</div>
-            <div class="product-ar" dir="rtl">كيك أوريو</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Tiramisu">
-          <div class="product-copy">
-            <div class="product-name">Tiramisu</div>
-            <div class="product-ar" dir="rtl">تيراميسو</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Hot Soufflé">
-          <div class="product-copy">
-            <div class="product-name">Hot Soufflé</div>
-            <div class="product-ar" dir="rtl">سوفليه ساخن</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Mini Pancakes</span>
-          <small dir="rtl">ميني بانكيك</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Chocolate &amp; Kinder">
-          <div class="product-copy">
-            <div class="product-name">Chocolate &amp; Kinder</div>
-            <div class="product-ar" dir="rtl">شوكولاتة وكندر</div>
-          </div>
-          <div class="price">22<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Lotus">
-          <div class="product-copy">
-            <div class="product-name">Lotus</div>
-            <div class="product-ar" dir="rtl">لوتس</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Classic">
-          <div class="product-copy">
-            <div class="product-name">Classic</div>
-            <div class="product-ar" dir="rtl">كلاسيك</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Waffles</span>
-          <small dir="rtl">وافل</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Nutella &amp; Kinder">
-          <div class="product-copy">
-            <div class="product-name">Nutella &amp; Kinder</div>
-            <div class="product-ar" dir="rtl">نوتيلا وكندر</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Pistachio">
-          <div class="product-copy">
-            <div class="product-name">Pistachio</div>
-            <div class="product-ar" dir="rtl">فستق</div>
-          </div>
-          <div class="price">40<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Classic">
-          <div class="product-copy">
-            <div class="product-name">Classic</div>
-            <div class="product-ar" dir="rtl">كلاسيك</div>
-          </div>
-          <div class="price">30<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Crêpes</span>
-          <small dir="rtl">كريب</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Kinder Fingers">
-          <div class="product-copy">
-            <div class="product-name">Kinder Fingers</div>
-            <div class="product-ar" dir="rtl">أصابع كندر</div>
-          </div>
-          <div class="price">40<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Lotus">
-          <div class="product-copy">
-            <div class="product-name">Lotus</div>
-            <div class="product-ar" dir="rtl">لوتس</div>
-          </div>
-          <div class="price">40<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Classic">
-          <div class="product-copy">
-            <div class="product-name">Classic</div>
-            <div class="product-ar" dir="rtl">كلاسيك</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Marshmallow">
-          <div class="product-copy">
-            <div class="product-name">Marshmallow</div>
-            <div class="product-ar" dir="rtl">مارشميلو</div>
-          </div>
-          <div class="price">40<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Kinder Delice">
-          <div class="product-copy">
-            <div class="product-name">Kinder Delice</div>
-            <div class="product-ar" dir="rtl">كندر ديليس</div>
-          </div>
-          <div class="price">40<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Stitch Specials</span>
-          <small dir="rtl">سبيشلز</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Filled Taiyaki">
-          <div class="product-copy">
-            <div class="product-name">Filled Taiyaki</div>
-            <div class="product-ar" dir="rtl">تياكي محشي</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Loaded Fashafish + Ice Cream">
-          <div class="product-copy">
-            <div class="product-name">Loaded Fashafish + Ice Cream</div>
-            <div class="product-ar" dir="rtl">فشافيش محمّل + بوظة</div>
-          </div>
-          <div class="price">35<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Classic Fashafish — 10 pcs">
-          <div class="product-copy">
-            <div class="product-name">Classic Fashafish — 10 pcs</div>
-            <div class="product-ar" dir="rtl">فشافيش كلاسيك — 10 حبات</div>
-          </div>
-          <div class="price">25<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Cookies</span>
-          <small dir="rtl">كوكيز</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/pretzel_caramel.jpg" alt="Salted Pretzel &amp; Caramel">
-          <div class="product-copy">
-            <div class="product-name">Salted Pretzel &amp; Caramel</div>
-            <div class="product-ar" dir="rtl">بريتزل مالح وكراميل</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/kinder.jpg" alt="Kinder">
-          <div class="product-copy">
-            <div class="product-name">Kinder</div>
-            <div class="product-ar" dir="rtl">كندر</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/triple_chocolate.jpg" alt="Triple Milk Chocolate">
-          <div class="product-copy">
-            <div class="product-name">Triple Milk Chocolate</div>
-            <div class="product-ar" dir="rtl">تريبل شوكولاتة بالحليب</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/classic_choc_chip.jpg" alt="Classic Chocolate Chip">
-          <div class="product-copy">
-            <div class="product-name">Classic Chocolate Chip</div>
-            <div class="product-ar" dir="rtl">شوكولاتة تشيبس كلاسيك</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/red_velvet.jpg" alt="Red Velvet">
-          <div class="product-copy">
-            <div class="product-name">Red Velvet</div>
-            <div class="product-ar" dir="rtl">ريد ڤيلڤت</div>
-          </div>
-          <div class="price">20<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/amsterdam.jpg" alt="Amsterdam">
-          <div class="product-copy">
-            <div class="product-name">Amsterdam</div>
-            <div class="product-ar" dir="rtl">أمستردام</div>
-          </div>
-          <div class="price">22<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/oreo_placeholder.jpg" alt="Oreo">
-          <div class="product-copy">
-            <div class="product-name">Oreo</div>
-            <div class="product-ar" dir="rtl">أوريو</div>
-          </div>
-          <div class="price">22<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/cornflakes_placeholder.jpg" alt="Cornflakes">
-          <div class="product-copy">
-            <div class="product-name">Cornflakes</div>
-            <div class="product-ar" dir="rtl">كورن فليكس</div>
-          </div>
-          <div class="price">22<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Cookie Boxes</span>
-          <small dir="rtl">بوكسات كوكيز</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="3 Cookies">
-          <div class="product-copy">
-            <div class="product-name">3 Cookies</div>
-            <div class="product-ar" dir="rtl">3 كوكيز</div>
-          </div>
-          <div class="price">55<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="6 Cookies">
-          <div class="product-copy">
-            <div class="product-name">6 Cookies</div>
-            <div class="product-ar" dir="rtl">6 كوكيز</div>
-          </div>
-          <div class="price">110<span>₪</span></div>
-        </div></div>
-    </details>
-    <details class="category">
-      <summary>
-        <div class="cat-title">
-          <span>Extras</span>
-          <small dir="rtl">إضافات</small>
-        </div>
-        <span class="chev"></span>
-      </summary>
-      <div class="products">
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Ice Cream Scoop">
-          <div class="product-copy">
-            <div class="product-name">Ice Cream Scoop</div>
-            <div class="product-ar" dir="rtl">كرة بوظة</div>
-          </div>
-          <div class="price">10<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Whipped Cream">
-          <div class="product-copy">
-            <div class="product-name">Whipped Cream</div>
-            <div class="product-ar" dir="rtl">كريمة</div>
-          </div>
-          <div class="price">5<span>₪</span></div>
-        </div>
-        <div class="product">
-          <img class="product-img" src="assets/generic_placeholder.jpg" alt="Marshmallow / Mekupelet / Klik / Kinder">
-          <div class="product-copy">
-            <div class="product-name">Marshmallow / Mekupelet / Klik / Kinder</div>
-            <div class="product-ar" dir="rtl">مارشميلو / مكوفيلت / كليك / كندر</div>
-          </div>
-          <div class="price">6<span>₪</span></div>
-        </div></div>
-    </details>
-    <div class="note">Oreo and Cornflakes cookie photos are marked with branded placeholders until Cafe Stitch provides the real product photos.</div>
-  </section>
+    <div class="footer">CAFE STITCH</div>
+  </main>
 
-  <footer class="footer">
-    <b>Cafe Stitch</b>
-    <p>SIP · BITE · REPEAT</p>
-  </footer>
-</main>
+  <script>
+    const fallbackImage = 'generic_placeholder.jpg';
 
-<script>
-const tabs = document.querySelectorAll('.tab');
-const panels = document.querySelectorAll('.panel');
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.target).classList.add('active');
-    window.scrollTo({top: document.querySelector('.tabs').offsetTop, behavior:'smooth'});
-  });
-});
-document.querySelectorAll('.panel').forEach(panel => {
-  panel.querySelectorAll('details').forEach(d => {
-    d.addEventListener('toggle', () => {
-      if(d.open) panel.querySelectorAll('details').forEach(o => { if(o !== d) o.open = false; });
+    function normalizeImagePath(path){
+      if(!path) return fallbackImage;
+      if(/^https?:\/\//i.test(path)) return path;
+      return String(path).replace(/^\.?\//,'') || fallbackImage;
+    }
+
+    function productRow(product){
+      const row = document.createElement('div');
+      row.className = 'product';
+
+      const img = document.createElement('img');
+      img.className = 'product-img';
+      img.loading = 'lazy';
+      img.alt = product.name_en || '';
+      img.src = normalizeImagePath(product.image);
+      img.onerror = () => {
+        if(!img.dataset.fallback){
+          img.dataset.fallback = '1';
+          img.src = fallbackImage;
+        }
+      };
+
+      const names = document.createElement('div');
+      names.className = 'names';
+
+      const en = document.createElement('div');
+      en.className = 'name-en';
+      en.textContent = product.name_en || '';
+
+      const ar = document.createElement('div');
+      ar.className = 'name-ar';
+      ar.textContent = product.name_ar || '';
+
+      names.append(en, ar);
+
+      const price = document.createElement('div');
+      price.className = 'price';
+      price.textContent = `${product.price ?? ''}₪`;
+
+      row.append(img, names, price);
+      return row;
+    }
+
+    function categoryCard(category){
+      const card = document.createElement('article');
+      card.className = 'category';
+
+      const head = document.createElement('button');
+      head.className = 'category-head';
+      head.type = 'button';
+
+      const title = document.createElement('div');
+      title.className = 'category-title';
+
+      const en = document.createElement('span');
+      en.textContent = category.category_en || '';
+
+      const sep = document.createElement('span');
+      sep.textContent = '|';
+      sep.style.color = 'var(--line)';
+
+      const ar = document.createElement('span');
+      ar.className = 'ar';
+      ar.textContent = category.category_ar || '';
+
+      const chev = document.createElement('span');
+      chev.className = 'chev';
+      chev.textContent = '⌄';
+
+      title.append(en, sep, ar);
+      head.append(title, chev);
+
+      const products = document.createElement('div');
+      products.className = 'products';
+      (category.products || []).forEach(p => products.appendChild(productRow(p)));
+
+      head.addEventListener('click', () => {
+        const parent = card.parentElement;
+        parent.querySelectorAll('.category.open').forEach(other => {
+          if(other !== card) other.classList.remove('open');
+        });
+        card.classList.toggle('open');
+      });
+
+      card.append(head, products);
+      return card;
+    }
+
+    function renderSection(id, categories){
+      const target = document.getElementById(id);
+      target.innerHTML = '';
+      (categories || []).forEach(c => target.appendChild(categoryCard(c)));
+    }
+
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => {
+          t.classList.toggle('active', t === tab);
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
     });
-  });
-});
-</script>
+
+    fetch('./menu.json', {cache:'no-store'})
+      .then(r => {
+        if(!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then(data => {
+        renderSection('drinks', data.drinks);
+        renderSection('sweets', data.sweets);
+        document.getElementById('status').style.display = 'none';
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('status').textContent = 'Menu could not be loaded. Please refresh the page.';
+      });
+  </script>
 </body>
 </html>
