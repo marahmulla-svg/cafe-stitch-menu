@@ -1,0 +1,149 @@
+{
+  "drinks": [
+    {
+      "category_en": "Coffee",
+      "category_ar": "قهوة",
+      "products": [
+        {"name_en":"Espresso","name_ar":"إسبريسو","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"Double Espresso","name_ar":"إسبريسو دبل","price":10,"image":"generic_placeholder.jpg"},
+        {"name_en":"Nescafé","name_ar":"نسكافيه","price":12,"image":"generic_placeholder.jpg"},
+        {"name_en":"Cappuccino","name_ar":"كابتشينو","price":12,"image":"generic_placeholder.jpg"},
+        {"name_en":"Hot Chocolate","name_ar":"شوكولاتة ساخنة","price":12,"image":"generic_placeholder.jpg"},
+        {"name_en":"Green Tea","name_ar":"شاي أخضر","price":10,"image":"generic_placeholder.jpg"},
+        {"name_en":"House Drink","name_ar":"مشروب الدار","price":20,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Iced Coffee",
+      "category_ar": "قهوة باردة",
+      "products": [
+        {"name_en":"Iced Coffee","name_ar":"آيس كوفي","price":20,"image":"generic_placeholder.jpg"},
+        {"name_en":"Iced Vanilla","name_ar":"آيس فانيلا","price":20,"image":"generic_placeholder.jpg"},
+        {"name_en":"Iced Latte","name_ar":"آيس لاتيه","price":15,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Milkshakes",
+      "category_ar": "ميلك شيك",
+      "products": [
+        {"name_en":"Oreo","name_ar":"أوريو","price":30,"image":"generic_placeholder.jpg"},
+        {"name_en":"Pistachio","name_ar":"فستق","price":30,"image":"generic_placeholder.jpg"},
+        {"name_en":"Chocolate","name_ar":"شوكولاتة","price":30,"image":"generic_placeholder.jpg"},
+        {"name_en":"Vanilla","name_ar":"فانيلا","price":30,"image":"generic_placeholder.jpg"},
+        {"name_en":"Strawberry","name_ar":"فراولة","price":30,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Mojito",
+      "category_ar": "موهيتو",
+      "products": [
+        {"name_en":"Lemon Mint","name_ar":"ليمون ونعنع","price":25,"image":"generic_placeholder.jpg"},
+        {"name_en":"Strawberry","name_ar":"فراولة","price":25,"image":"generic_placeholder.jpg"},
+        {"name_en":"Mango","name_ar":"مانجا","price":25,"image":"generic_placeholder.jpg"},
+        {"name_en":"Watermelon","name_ar":"بطيخ","price":25,"image":"generic_placeholder.jpg"},
+        {"name_en":"Blueberry","name_ar":"بلو بيري","price":25,"image":"generic_placeholder.jpg"},
+        {"name_en":"Mix Berry","name_ar":"ميكس بيري","price":25,"image":"generic_placeholder.jpg"},
+        {"name_en":"Blue Carso","name_ar":"بلو كارسو","price":25,"image":"generic_placeholder.jpg"},
+        {"name_en":"Bubblegum","name_ar":"بابل غام","price":25,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Cold Drinks",
+      "category_ar": "مشروبات باردة",
+      "products": [
+        {"name_en":"Coca-Cola","name_ar":"كوكا كولا","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"Coca-Cola Zero","name_ar":"كوكا كولا زيرو","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"Sprite","name_ar":"سبرايت","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"Fanta","name_ar":"فانتا","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"Soda","name_ar":"صودا","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"Water","name_ar":"مي","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"XL","name_ar":"XL","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"XL Ten","name_ar":"XL Ten","price":7,"image":"generic_placeholder.jpg"},
+        {"name_en":"Fresh Orange Juice","name_ar":"عصير برتقال طبيعي","price":22,"image":"generic_placeholder.jpg"}
+      ]
+    }
+  ],
+
+  "sweets": [
+    {
+      "category_en": "Desserts",
+      "category_ar": "حلويات",
+      "products": [
+        {"name_en":"Cheesecake","name_ar":"تشيز كيك","price":40,"image":"generic_placeholder.jpg"},
+        {"name_en":"Chocolate Cake","name_ar":"كيك شوكولاتة","price":35,"image":"generic_placeholder.jpg"},
+        {"name_en":"Oreo Cake","name_ar":"كيك أوريو","price":35,"image":"generic_placeholder.jpg"},
+        {"name_en":"Tiramisu","name_ar":"تيراميسو","price":35,"image":"generic_placeholder.jpg"},
+        {"name_en":"Hot Soufflé","name_ar":"سوفليه ساخن","price":35,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Mini Pancakes",
+      "category_ar": "ميني بانكيك",
+      "products": [
+        {"name_en":"Chocolate & Kinder","name_ar":"شوكولاتة وكندر","price":22,"image":"generic_placeholder.jpg"},
+        {"name_en":"Lotus","name_ar":"لوتس","price":20,"image":"generic_placeholder.jpg"},
+        {"name_en":"Classic","name_ar":"كلاسيك","price":20,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Waffles",
+      "category_ar": "وافل",
+      "products": [
+        {"name_en":"Nutella & Kinder","name_ar":"نوتيلا وكندر","price":35,"image":"generic_placeholder.jpg"},
+        {"name_en":"Pistachio","name_ar":"فستق","price":40,"image":"generic_placeholder.jpg"},
+        {"name_en":"Classic","name_ar":"كلاسيك","price":30,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Crêpes",
+      "category_ar": "كريب",
+      "products": [
+        {"name_en":"Kinder Fingers","name_ar":"أصابع كندر","price":40,"image":"generic_placeholder.jpg"},
+        {"name_en":"Lotus","name_ar":"لوتس","price":40,"image":"generic_placeholder.jpg"},
+        {"name_en":"Classic","name_ar":"كلاسيك","price":35,"image":"generic_placeholder.jpg"},
+        {"name_en":"Marshmallow","name_ar":"مارشميلو","price":40,"image":"generic_placeholder.jpg"},
+        {"name_en":"Kinder Delice","name_ar":"كندر ديليس","price":40,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Stitch Specials",
+      "category_ar": "سبيشلز",
+      "products": [
+        {"name_en":"Filled Taiyaki","name_ar":"تياكي محشي","price":35,"image":"generic_placeholder.jpg"},
+        {"name_en":"Loaded Fashafish + Ice Cream","name_ar":"فشافيش محمّل + بوظة","price":35,"image":"generic_placeholder.jpg"},
+        {"name_en":"Classic Fashafish — 10 pcs","name_ar":"فشافيش كلاسيك — 10 حبات","price":25,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Cookies",
+      "category_ar": "كوكيز",
+      "products": [
+        {"name_en":"Salted Pretzel & Caramel","name_ar":"بريتزل مالح وكراميل","price":20,"image":"pretzel_caramel.jpg"},
+        {"name_en":"Kinder","name_ar":"كندر","price":20,"image":"kinder.jpg"},
+        {"name_en":"Triple Milk Chocolate","name_ar":"تريبل شوكولاتة بالحليب","price":20,"image":"triple_chocolate.jpg"},
+        {"name_en":"Classic Chocolate Chip","name_ar":"شوكولاتة تشيبس كلاسيك","price":20,"image":"classic_choc_chip.jpg"},
+        {"name_en":"Red Velvet","name_ar":"ريد ڤيلڤت","price":20,"image":"red_velvet.jpg"},
+        {"name_en":"Amsterdam","name_ar":"أمستردام","price":22,"image":"amsterdam.jpg"},
+        {"name_en":"Oreo","name_ar":"أوريو","price":22,"image":"oreo_placeholder.jpg"},
+        {"name_en":"Cornflakes","name_ar":"كورن فليكس","price":22,"image":"cornflakes_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Cookie Boxes",
+      "category_ar": "بوكسات كوكيز",
+      "products": [
+        {"name_en":"3 Cookies","name_ar":"3 كوكيز","price":55,"image":"generic_placeholder.jpg"},
+        {"name_en":"6 Cookies","name_ar":"6 كوكيز","price":110,"image":"generic_placeholder.jpg"}
+      ]
+    },
+    {
+      "category_en": "Extras",
+      "category_ar": "إضافات",
+      "products": [
+        {"name_en":"Ice Cream Scoop","name_ar":"كرة بوظة","price":10,"image":"generic_placeholder.jpg"},
+        {"name_en":"Whipped Cream","name_ar":"كريمة","price":5,"image":"generic_placeholder.jpg"},
+        {"name_en":"Marshmallow / Mekupelet / Klik / Kinder","name_ar":"مارشميلو / مكوفلت / كليك / كندر","price":6,"image":"generic_placeholder.jpg"}
+      ]
+    }
+  ]
+}
