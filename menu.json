@@ -8,43 +8,43 @@
           "name_en": "Espresso",
           "name_ar": "إسبريسو",
           "price": 7,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file.jpeg"
         },
         {
           "name_en": "Double Espresso",
           "name_ar": "إسبريسو دبل",
           "price": 10,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-1.jpeg"
         },
         {
           "name_en": "Nescafé",
           "name_ar": "نسكافيه",
           "price": 12,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-2.jpeg"
         },
         {
           "name_en": "Cappuccino",
           "name_ar": "كابتشينو",
           "price": 12,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-3.jpeg"
         },
         {
           "name_en": "Hot Chocolate",
           "name_ar": "شوكولاتة ساخنة",
           "price": 12,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-4.jpeg"
         },
         {
           "name_en": "תה ירוק",
           "name_ar": "شاي أخضر",
           "price": 10,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-5.jpeg"
         },
         {
           "name_en": "משקה הבית",
           "name_ar": "שוקו עם קצפת ותוספת",
           "price": 20,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-6.jpeg"
         }
       ]
     },
@@ -175,12 +175,14 @@
         {
           "name_en": "לימונענע גרוס",
           "name_ar": "גרוס",
-          "price": 20
+          "price": 20,
+          "image": "/media/file-7.jpeg"
         },
         {
           "name_en": "פסיפלורה",
           "name_ar": "פסיפלורה",
-          "price": 15
+          "price": 15,
+          "image": "/media/file-8.jpeg"
         },
         {
           "name_en": "Coca-Cola",
@@ -242,46 +244,49 @@
           "name_en": "עוגת גבינה",
           "name_ar": "جبنة",
           "price": 35,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-9.jpeg"
         },
         {
           "name_en": "עוגת שוקולד",
           "name_ar": "כולל כדור גלידה",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-10.jpeg"
         },
         {
           "name_en": "רד וולווט",
           "name_ar": "רד וולווט",
           "price": 30,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-11.jpeg"
         },
         {
           "name_en": "טירמיסו",
           "name_ar": "تيراميسو",
           "price": 35,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-12.jpeg"
         },
         {
           "name_en": "סופלה",
           "name_ar": "כולל גלידה + קצפת",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-13.jpeg"
         },
         {
           "name_en": "עוגת אלפחורס",
           "name_ar": "אלפחורס",
-          "price": 35
+          "price": 35,
+          "image": "/media/file-14.jpeg"
         },
         {
           "name_en": "סינבון",
           "name_ar": "سينبون",
-          "price": 20
+          "price": 20,
+          "image": "/media/file-15.jpeg"
         },
         {
           "name_en": "עוגת פררו",
           "name_ar": "فيريرو",
-          "price": 35
+          "price": 35,
+          "image": "/media/file-16.jpeg"
         }
       ]
     },
@@ -293,19 +298,19 @@
           "name_en": "שוקולד & קינדר",
           "name_ar": "15 יחידה",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-17.jpeg"
         },
         {
           "name_en": "לוטוס",
           "name_ar": "15 יחידה",
           "price": 35,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-18.jpeg"
         },
         {
           "name_en": "קלאסי",
           "name_ar": "15 יחידה",
           "price": 30,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-19.jpeg"
         }
       ]
     },
@@ -317,19 +322,19 @@
           "name_en": "נוטלה & קינדר",
           "name_ar": "نوتيلا وكندر",
           "price": 35,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-20.jpeg"
         },
         {
           "name_en": "Pistachio",
           "name_ar": "فستق",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-21.jpeg"
         },
         {
           "name_en": "קלאסי",
           "name_ar": "كلاسيك",
           "price": 30,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-22.jpeg"
         }
       ]
     },
@@ -341,31 +346,31 @@
           "name_en": "קינדר",
           "name_ar": "أصابع كندر",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-23.jpeg"
         },
         {
           "name_en": "לוטוס",
           "name_ar": "لوتس",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-24.jpeg"
         },
         {
           "name_en": "קלאסי",
           "name_ar": "كلاسيك",
           "price": 25,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-25.jpeg"
         },
         {
           "name_en": "מרשמלו",
           "name_ar": "مارشميلو",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-26.jpeg"
         },
         {
           "name_en": "קינדר דיליס",
           "name_ar": "كندر ديليس",
           "price": 40,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-27.jpeg"
         }
       ]
     },
@@ -377,19 +382,19 @@
           "name_en": "טיאקי",
           "name_ar": "בתוספת גלידה",
           "price": 30,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-28.jpeg"
         },
         {
           "name_en": "פשאפיש מושחת + גלידה",
           "name_ar": "10 יחידות",
           "price": 30,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-29.jpeg"
         },
         {
           "name_en": "פשאפיש",
           "name_ar": "15 יחידות",
           "price": 30,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-30.jpeg"
         }
       ]
     },
@@ -437,18 +442,19 @@
           "name_en": "אוריו",
           "name_ar": "أوريو",
           "price": 21,
-          "image": "oreo_placeholder.jpg"
+          "image": "/media/file-31.jpeg"
         },
         {
           "name_en": "קורנפלקס",
           "name_ar": "كورن فليكس",
           "price": 21,
-          "image": "cornflakes_placeholder.jpg"
+          "image": "/media/file-32.jpeg"
         },
         {
           "name_en": "נוטלה ביסקוויט",
           "name_ar": "نوتيلا",
-          "price": 21
+          "price": 21,
+          "image": "/media/file-33.jpeg"
         }
       ]
     },
@@ -460,13 +466,13 @@
           "name_en": "3 Cookies",
           "name_ar": "3 كوكيز",
           "price": 55,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/3.jpeg"
         },
         {
           "name_en": "6 Cookies",
           "name_ar": "6 كوكيز",
           "price": 100,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/6.jpeg"
         }
       ]
     },
@@ -478,19 +484,19 @@
           "name_en": "כדור גלידה",
           "name_ar": "كرة بوظة",
           "price": 10,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-34.jpeg"
         },
         {
           "name_en": "קרימה",
           "name_ar": "كريمة",
           "price": 5,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-35.jpeg"
         },
         {
           "name_en": "מרשמילו / מקופלת / קליק / קינדר",
           "name_ar": "مارشميلو / مكوفلت / كليك / كندر",
           "price": 6,
-          "image": "generic_placeholder.jpg"
+          "image": "/media/file-36.jpeg"
         }
       ]
     }
